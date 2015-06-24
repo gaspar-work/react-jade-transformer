@@ -7,7 +7,7 @@ var _ = require("lodash");
 module.exports = function(string) {
   var jadeString = flattenLeftWhitespace(string);
 
-  var parser = new Parser(jadeString, null, {});
+  var parser = new Parser(jadeString, null, { basedir: './'});
   var jadeTree = parser.parse();
 
   if (jadeTree.nodes.length != 1) {

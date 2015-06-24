@@ -130,6 +130,7 @@ var walk = function(node) {
     case "BreakStatement": break;
     case "ThisExpression": break;
     case "EmptyStatement": break;
+    case "LabeledStatement": break;
 
     default:
     console.log("Unhandled Node in Tree", node);
