@@ -1,5 +1,4 @@
 var through = require("through2");
-var gutil = require("gulp-util");
 
 var mapper = require("./mapper.js");
 var walker = require("./walker.js");
@@ -35,10 +34,7 @@ module.exports.gulp = function(options) {
       file.contents = new Buffer(doTransform(out, options));
     }
     if (file.isStream()) {
-      this.emit("error", new gutil.PluginError(
-        "react-jade-transform", 
-        "Streaming not supported"
-      ));
+      this.emit("error", "react-jade-transform: Streaming not supported");
       return cb();
     }
 
